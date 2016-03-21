@@ -1,0 +1,73 @@
+html{
+  width: 100%;
+  font-family: arial;
+  margin: 0;
+  padding: 0;
+  background: #fdfdfd;
+}
+
+body{
+  padding: 15px;
+}
+
+
+.app{
+  width: 80%;
+  margin: auto;
+  padding: 15px;
+}
+
+.titre{
+  width: 100%;
+  text-align: left;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 10px;
+  font-size: 3em;
+  color: snow;
+  background: #61a1bc;
+}
+
+.boutonCalc{
+  line-height: 30px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  background: #61a1bc;
+  text-align: center;
+  width: 40px;
+  display: inline-block;;
+  float: left;
+}
+
+.sepCalc{
+  line-height: 30px;
+  margin: 5px;
+  width: 5px;
+  display: inline-block;
+  float: left;
+}
+
+.btn-danger{
+  background: red;
+}
+
+.btn-success{
+  background: #8ec16d;
+}
+
+.colspan{
+  width: 100px;
+}
+
+
+.btn:hover{
+  cursor: pointer;
+  padding-left: 7px;
+  padding-top: 7px;
+  padding-right: 3px;
+  padding-bottom: 3px;
+  box-shadow: inset 3px 3px 7px snow, 3px 3px 3px grey;
+}

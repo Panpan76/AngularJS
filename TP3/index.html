@@ -1,0 +1,50 @@
+<html ng-app="monaieApp">
+<head>
+  <script src="../angular.js"></script>
+  <script src="js/bundle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="design.css">
+</head>
+<body ng-controller="monaieController as ctrl" class="app">
+  <div class="titre">Convertisseur de devises</div>
+  <table>
+    <tr>
+      <td><input type="number" name="origine" min="0" ng-model="ctrl.combien" /></td>
+      <td>
+        <select ng-model="ctrl.from" ng-options="(monaie.code+' - '+monaie.name) for monaie in ctrl.monaies">
+        </select>
+      </td>
+      <td><button ng-click="ctrl.echange()">◀-▶</button></td>
+      <td>
+        <select ng-model="ctrl.to" ng-options="(monaie.code+' - '+monaie.name) for monaie in ctrl.monaies">
+        </select>
+      </td>
+      <td><button ng-click='ctrl.getResultat()'>Convertir</button></td>
+      <td><input disabled name="origine" min="0" ng-model="ctrl.resultat" /></td>
+    </tr>
+  </table>
+
+  <div ng-show="ctrl.historique.length > 0">
+    <table>
+      <tr>
+        <th>De</th>
+        <th>En</th>
+        <th>Taux</th>
+        <th>Montant</th>
+        <th>Date</th>
+        <th>Delta</th>
+        <th></th>
+      </tr>
+      <tr ng-repeat="conversion in ctrl.historique">
+        <td>{{conversion.from.code}}</td>
+        <td>{{conversion.to.code}}</td>
+        <td></td>
+        <td>{{conversion.amount}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

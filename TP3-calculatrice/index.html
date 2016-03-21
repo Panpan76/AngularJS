@@ -1,0 +1,16 @@
+<html ng-app="calculatriceApp">
+<head>
+  <script src="../angular.js"></script>
+
+  <script src="js/bundle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="design.css">
+</head>
+<body ng-controller="calculatriceController as ctrl" class="app">
+  <div class="titre">Calculatrice</div>
+
+  <div ng-repeat="bt in ctrl.bts track by $index">
+    <bt-calc value="{{bt.value}}" css="{{bt.cssClass}}"></bt-calc>
+  </div>
+</body>
+</html>

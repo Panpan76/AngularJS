@@ -1,0 +1,63 @@
+html{
+  width: 100%;
+  font-family: arial;
+  margin: 0;
+  padding: 0;
+  background: #61a1bc;
+}
+
+body{
+  padding: 15px;
+}
+
+
+.app{
+  width: 30%;
+  margin: auto;
+  padding: 15px;
+}
+
+.titre{
+  width: 100%;
+  text-align: center;
+  margin-top: 25px;
+  font-size: 5em;
+  color: snow;
+}
+
+.prix{
+  float: right;
+}
+
+.services, .total, .info{
+  color: snow;
+  border-radius: 5px;
+  line-height: 70px;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.services:hover{
+  cursor: pointer;
+}
+
+.active{
+  background: #8ec16d;
+}
+
+.inactive{
+  background: #777777;
+}
+
+.info{
+  background: #d9edf7;
+  line-height: 40px;
+  color: #84a8c9;
+}
+
+.info>.gras{
+  color: #306f8f;
+  font-weight: bold;
+}

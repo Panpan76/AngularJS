@@ -1,0 +1,7 @@
+<div class="sous-titre">{{ctrl.titreModif}} un contact</div>
+<hr />
+<input type="text" name="nom" placeholder="Nom" value="{{ctrl.contact.nom}}" ng-model="ctrl.contact.nom" required/>
+<input type="text" name="prenom" placeholder="Prénom" value="{{ctrl.contact.prenom}}" ng-model="ctrl.contact.prenom"/>
+<input type="mail" name="mail" placeholder="E-mail" value="{{ctrl.contact.mail}}" ng-model="ctrl.contact.mail"/>
+<button ng-click="ctrl.add()">Valider</button>
+<button ng-click="ctrl.edit = false; ctrl.contact = null">Annuler</button>

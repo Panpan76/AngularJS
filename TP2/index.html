@@ -1,0 +1,63 @@
+<html ng-app="servicesApp">
+<head>
+  <script type="text/javascript" src="../angular.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/servicesController.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="design.css">
+</head>
+<body ng-controller="servicesController as ctrl">
+<div class="app">
+  <div ng-show="ctrl.step == 1">
+    <div class="titre">Sélectionnez vos produits</div>
+
+    <table>
+      <tr>
+        <td>Produits disponibles :</td>
+        <td></td>
+        <td>Produits sélectionnés :</td>
+      </tr>
+      <tr>
+        <td>
+          <select class="liste" multiple="multiple" ng-model="ctrl.selectedDispoItems" ng-options="item.title for item in ctrl.dispoItems">
+          </select>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td><button ng-click="ctrl.addToIncluded()">▶|</button></td>
+            </tr>
+            <tr>
+              <td><button ng-click="ctrl.addAllToIncluded()">▶▶|</button></td>
+            </tr>
+            <tr>
+              <td><button ng-click="ctrl.removeFromIncluded()">|◀</button></td>
+            </tr>
+            <tr>
+              <td><button ng-click="ctrl.removeAllFromIncluded()">|◀◀</button></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <select class="liste" multiple="multiple" ng-model="ctrl.selectedIncludedItems" ng-options="item.title for item in ctrl.includedItems">
+          </select>
+        </td>
+      </tr>
+    </table>
+    <button ng-disabled="ctrl.includedItems.length == 0" class="droite" ng-click="ctrl.step = ctrl.step + 1">Etape suivante ▶</button>
+  </div>
+
+  <div ng-show="ctrl.step == 2">
+    <div class="titre">Votre choix</div>
+
+    <div ng-repeat="item in ctrl.includedItems">
+      <a href="{{item.url}}">
+        <img ng-src="{{item.image}}"/>{{item.title}}
+      </a>
+      <hr />
+    </div>
+
+    <button class="droite" ng-click="ctrl.step = ctrl.step - 1">Etape précédente ◀</button>
+  </div>
+</body>
+</html>

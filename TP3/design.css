@@ -1,0 +1,73 @@
+html{
+  width: 100%;
+  font-family: arial;
+  margin: 0;
+  padding: 0;
+  background: #fdfdfd;
+}
+
+body{
+  padding: 15px;
+}
+
+
+.app{
+  width: 80%;
+  margin: auto;
+  padding: 15px;
+}
+
+.titre{
+  width: 100%;
+  text-align: left;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 10px;
+  font-size: 3em;
+  color: snow;
+  background: #61a1bc;
+}
+
+.sous-titre{
+  font-size: 1.5em;
+}
+
+input{
+  line-height: 25px;
+  padding: 5px;
+}
+
+input.max{
+  width: 98%;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tr>td{
+  width: 25%;
+  text-align: center;
+}
+
+table tr:nth-child(even){
+  background: #dedede;
+}
+table tr:nth-child(odd){
+  background: #ededed;
+}
+
+
+.liste{
+  height: 300px;
+  width: 100%;
+  background: snow;
+  overflow-y: scroll;
+}
+
+.droite{
+  float: right;
+}

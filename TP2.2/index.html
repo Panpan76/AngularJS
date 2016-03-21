@@ -1,0 +1,28 @@
+<html ng-app="servicesApp">
+<head>
+  <script type="text/javascript" src="../angular.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/servicesController.js"></script>
+  <script type="text/javascript" src="js/directives.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="design.css">
+</head>
+<body ng-controller="servicesController as ctrl">
+<div class="app">
+  <div class="titre">Contacts</div>
+
+  <input class="max" type="text" placeholder="Filtrer..." />
+
+  <table>
+    <tr contact-elem ng-repeat="contact in ctrl.notDeleted()">
+    </tr>
+  </table>
+
+  <button ng-click="ctrl.edit = true; ctrl.contact = null; ctrl.titreModif = 'Ajouter'">Ajouter...</button>
+  <button ng-show="ctrl.contacts.length != ctrl.notDeleted().length" ng-click="ctrl.restaure()">Annuler la suppression ({{ctrl.contacts.length-ctrl.notDeleted().length}})</button>
+  <button ng-click="ctrl.confirmSuppr()">Confirmer la suppression {{ctrl.contacts.length-ctrl.notDeleted().length}}</button>
+  <br /><br />
+  <div frm-contact ng-show="ctrl.edit"></div>
+</div>
+</body>
+</html>

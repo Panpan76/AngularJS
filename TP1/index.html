@@ -1,0 +1,36 @@
+<html ng-app="servicesApp">
+<head>
+  <script type="text/javascript" src="../angular.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/servicesController.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="design.css">
+</head>
+<body ng-controller="servicesController as ctrl">
+<div class="app">
+  <div class="titre">Services</div>
+
+  <div class="info">
+    Choisissez les éléments à inclure<br />
+    <span class="gras">{{ctrl.nbSelect}} services sélectionnés</span>
+  </div>
+  <div class="services"
+    ng-repeat="service in ctrl.services"
+    ng-class="{active: (service.active == true), inactive: (service.active == false)}"
+    ng-click="ctrl.change(service)">
+    <span class="nom">{{service.name}}</span>
+    <span class="prix">{{service.price | currencyFR}}</span>
+  </div>
+  <hr />
+  <div class="total">
+    <span class="nom">Total</span>
+    <span class="prix">{{ctrl.total() | currencyFR}}</span>
+  </div>
+  <input type="text" ng-change="ctrl.verifPromo()" ng-model="ctrl.texteCode"/>
+
+  <div class="reduc" ng-show="ctrl.reduc!=0">
+    <span class="nom">Réduction</span>
+    <span class="prix">{{ctrl.reduc | currencyFR}}</span>
+  </div>
+</body>
+</html>

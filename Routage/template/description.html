@@ -1,0 +1,13 @@
+<h1>{{page.titre}}</h1>
+
+<table class="description">
+  <tr>
+    <th ng-repeat="titre in page.titreTab">{{titre}}</th>
+  </tr>
+  <tr ng-repeat="element in page.tab">
+    <td>{{element.titre}}</td>
+    <td>{{element.description}}</td>
+    <td ng-show="element.url"><a href="{{element.url}}">Wiki</a></td>
+    <td ng-show="element.image"><img src="{{element.image}}"/></td>
+  </tr>
+</table>
